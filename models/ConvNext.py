@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from timm.models.layers import trunc_normal_, DropPath
 from timm.models.registry import register_model
 
-__all__ = ['DenseNet', 'densenet121', 'densenet169', 'densenet201', 'densenet264']
+__all__ = ['convnext_xtiny', 'convnext_tiny', 'convnext_small', 'convnext_base', 'convnext_large', 'convnext_xlarge']
 
 class Block(nn.Module):
     r""" ConvNeXt Block. There are two equivalent implementations:
@@ -135,23 +135,23 @@ class LayerNorm(nn.Module):
             return x
 
 
-def convnext_xtiny(pretrained=False,in_22k=False, **kwargs):
-    model = ConvNeXt(depths=[2, 2, 4, 2], dims=[96, 192, 384, 768], **kwargs)
+def convnext_xtiny(**kwargs):
+    model = ConvNeXt(depths=[2, 2, 3, 2], dims=[96, 192, 384, 768], **kwargs)
     return model
 
-def convnext_tiny(pretrained=False,in_22k=False, **kwargs):
+def convnext_tiny(**kwargs):
     model = ConvNeXt(depths=[3, 3, 9, 3], dims=[96, 192, 384, 768], **kwargs)
     return model
 
-def convnext_small(pretrained=False,in_22k=False, **kwargs):
+def convnext_small(**kwargs):
     model = ConvNeXt(depths=[3, 3, 27, 3], dims=[96, 192, 384, 768], **kwargs)
     return model
 
-def convnext_base(pretrained=False, in_22k=False, **kwargs):
+def convnext_base(**kwargs):
     model = ConvNeXt(depths=[3, 3, 27, 3], dims=[128, 256, 512, 1024], **kwargs)
     return model
 
-def convnext_large(pretrained=False, in_22k=False, **kwargs):
+def convnext_large(**kwargs):
     model = ConvNeXt(depths=[3, 3, 27, 3], dims=[192, 384, 768, 1536], **kwargs)
     return model
 
