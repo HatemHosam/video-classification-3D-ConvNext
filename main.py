@@ -29,9 +29,9 @@ if __name__=="__main__":
         print(model)
 
     input_files = []
-    with open(opt.input, 'r') as f:
-        for row in f:
-            input_files.append(row[:-1])
+    #with open(opt.input, 'r') as f:
+     #   for row in f:
+      #      input_files.append(row[:-1])
 
     class_names = []
     with open('class_names_list') as f:
@@ -47,7 +47,7 @@ if __name__=="__main__":
 
     outputs = []
     for input_file in input_files:
-        video_path = os.path.join(opt.video_root, input_file)
+        video_path = './v_YoYo_g25_c05.avi'  #os.path.join(opt.video_root, input_file)
         if os.path.exists(video_path):
             print(video_path)
             subprocess.call('mkdir tmp', shell=True)
