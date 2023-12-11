@@ -29,7 +29,7 @@ if __name__=="__main__":
         print(model)
 
     input_files = []
-    with open(opt.input, 'r') as f:
+    with open(opt.input, 'r', encoding="latin-1") as f:
         for row in f:
             input_files.append(row[:-1])
 
