@@ -30,7 +30,7 @@ if __name__=="__main__":
 
     input_files = []
     with open(opt.input, 'r') as f:
-        for row in f.decode():
+        for row in f:
             input_files.append(row[:-1])
 
     class_names = []
