@@ -28,7 +28,7 @@ if __name__=="__main__":
     if opt.verbose:
         print(model)
 
-    input_files = []
+    input_files = [1]
     #with open(opt.input, 'r') as f:
      #   for row in f:
       #      input_files.append(row[:-1])
